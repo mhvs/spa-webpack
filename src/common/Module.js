@@ -23,12 +23,14 @@ export default class Module {
   }
 
   hide () {
+    /* 也可以引入缓存机制隐藏但不销毁,  */
     if (this._body) {
       this._parent.removeChild(this._body)
     }
   }
 
   destroy () {
+    /* 处理移除dom还要移除监听器 */
 
   }
 }
