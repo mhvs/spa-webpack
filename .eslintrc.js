@@ -2,8 +2,11 @@
 
 module.exports = {
   root: true,
-  parserOptions: {
-    parser: 'babel-eslint'
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame": false
   },
   env: {
     browser: true,

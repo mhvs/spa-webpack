@@ -16,22 +16,30 @@ export default function router (options) {
       context.redirect('/404')
       return
     }
-
-    if (current instanceof route.component) {
-      /* 如果当前模块就是路由的模块, 那么刷新当前模块 */
-      current.refresh(context)
-    } else {
-      /* 如果当前模块不是是路由的模块, 那么使用新模块 */
-      const Component = route.component
-      const module = new Component(options)
-      module.build(context)
-      if (current) {
-        current.hide()
+    const process = (Component) => {
+      if (current instanceof Component) {
+        /* 如果当前模块就是路由的模块, 那么刷新当前模块 */
+        current.refresh(context)
+      } else {
+        /* 如果当前模块不是是路由的模块, 那么使用新模块 */
+        const module = new Component(options)
+        module.build(context)
+        if (current) {
+          current.hide()
+        }
+        current = module
+        current.show(context)
+        next()
       }
-      current = module
-      current.show(context)
     }
-
-    next()
+    if (route.component) {
+      process(route.component)
+    } else if (route.getComponent) {
+      route.getComponent().then(res => {
+        process(res.default)
+      })
+    } else {
+      context.redirect('/404')
+    }
   }
 }

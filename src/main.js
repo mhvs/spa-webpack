@@ -7,7 +7,7 @@ import router from './middleware/router'
 import Login from './page/Login'
 import Page404 from './page/404'
 import GroupUsers from './page/GroupUsers'
-import User from './page/User'
+// import User from './page/User'
 
 import SPA from './SPA'
 
@@ -49,7 +49,8 @@ const options = {
     },
     {
       path: '/user/:uid',
-      component: User
+      // component: User,
+      getComponent: () => import('./page/User')
     },
     {
       path: '/group/:gid/users',
