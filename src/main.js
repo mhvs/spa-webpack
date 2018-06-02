@@ -55,6 +55,10 @@ const options = {
     {
       path: '/group/:gid/users',
       component: GroupUsers
+    },
+    {
+      path: '/htmltest',
+      getComponent: () => fetch('/static/htmltest.html')
     }
   ]
 }

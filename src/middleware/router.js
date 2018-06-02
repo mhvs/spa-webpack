@@ -22,11 +22,16 @@ export default function router (options) {
         current.refresh(context)
       } else {
         /* 如果当前模块不是是路由的模块, 那么使用新模块 */
+        if (isHTMLModule(current)) {
+          /* 用于HTML模块销毁自己 */
+          document.getElementById('app').innerHTML = ''
+        } else {
+          if (current) {
+            current.hide()
+          }
+        }
         const module = new Component(options)
         module.build(context)
-        if (current) {
-          current.hide()
-        }
         current = module
         current.show(context)
         next()
@@ -35,11 +40,39 @@ export default function router (options) {
     if (route.component) {
       process(route.component)
     } else if (route.getComponent) {
-      route.getComponent().then(res => {
-        process(res.default)
+      route.getComponent().then(parseResponse).then(res => {
+        /* 这里假设了只有html和component两种情况, 实际项目中不可能处理的如此
+         * vue会变编译为js模块
+         * html模板也有专门的loader处理
+         * 这里仅为示意
+         * */
+        if (typeof res === 'string') {
+          if (current) {
+            current.hide()
+            current = res
+          }
+          document.getElementById('app').innerHTML = res
+          next()
+        } else {
+          process(res.default)
+        }
+      }).catch(e => {
+        console.log(e)
       })
     } else {
       context.redirect('/404')
     }
   }
+}
+
+function parseResponse (res) {
+  if (res.__esModule) {
+    return res
+  } else {
+    return res.text()
+  }
+}
+
+function isHTMLModule (current) {
+  return typeof current === 'string'
 }
