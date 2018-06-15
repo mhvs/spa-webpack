@@ -1,7 +1,9 @@
 # spa
 
-# Status
+## Status
 [![Build Status](https://travis-ci.org/mhvs/spa-webpack.png)](https://travis-ci.org/mhvs/spa-webpack)
+
+[![Coverage Status](https://coveralls.io/repos/github/mhvs/spa-webpack/badge.svg)](https://coveralls.io/github/mhvs/spa-webpack)
 
 # 一个简单的SPA骨架
 
