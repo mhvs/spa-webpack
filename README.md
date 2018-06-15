@@ -1,5 +1,8 @@
 # spa
 
+# Status
+[![Build Status](https://travis-ci.org/mhvs/spa-webpack.png)](https://travis-ci.org/mhvs/spa-webpack)
+
 # 一个简单的SPA骨架
 
 - 为了无需配置后端服务器即可打开,使用hash路由.
