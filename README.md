@@ -1,6 +1,5 @@
 # spa
 
-## Status
 [![Build Status](https://travis-ci.org/mhvs/spa-webpack.svg?branch=feature%2Fci)](https://travis-ci.org/mhvs/spa-webpack)
 
 [![Coverage Status](https://coveralls.io/repos/github/mhvs/spa-webpack/badge.svg?branch=feature%2Fci)](https://coveralls.io/github/mhvs/spa-webpack?branch=feature%2Fci)
