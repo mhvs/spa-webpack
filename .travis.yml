@@ -14,3 +14,7 @@ cache:
 
 script:
     - npm test
+
+env:
+  global:
+    secure: "S6PKFIPMyje8TgfcGYP+10DSHMtCA//hdBGA2onGwuhiTnBMOVAkwVBGgNXdx2zGrWnSxCbmf/+DapVmAp9IqVLmTaDPE3NteCgkvCOmwzLAMRIt90/wCZp0JFbzBLwmlhEPao5JcL2t7PPZLDbLvUO4SBt6jl/jtNTqAZMrr1k4MkFHw0XXraZMDaA9DE1ITXWl3Q5KHo+vQtsVgBvHtK+b1fil/z2uxyTjCAI3p98Nth+ax6e6K/4nEi4N44btk8vOqS1yn/Nw0csVvwqDqrgn0RMgJ9/DKEiN3yZq9TOAJwXpLLhVWWa4eeAfO+QnCg0m5ZTml+WrJl7lF6Pq7QmpWBO+R7ptlIbc0Ke0wlNoXYMexwuFClldx34zitGXoR9o5EbN36avfA65MHtNH4j1Am32v/M7TksyIsDZpoOsqhGxs+qXSWmQL52NuCnbwFdqnBEx8nOHtqxH6+lBStGTejW+ffAgeZZXY1Iuw3lsZhlUGrYi6ZhPIsMs85jeNPI9zBqWsBySzTM9hmLxsucAvXb0OwPDLhue8byMaJYvy+x/YdAh3sZb7x5t/oSbweBgPtZGt3G2K4Jne8m4BA4fUA+8PoH0l8j6E/a7ib46Au/XoqtaL5t81oWWquIO/A6qf5ZtuL/T9KbhXQ0UOhy7LARsoKKr7TsvedKg83Y="
