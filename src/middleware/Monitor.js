@@ -10,8 +10,8 @@ export default class Monitor {
   }
 
   // 检测到路由变化则发送event
-  runURLCheck () {
-    let url = window.location.href
+  runURLCheck (path) {
+    let url = path || window.location.href
     if (url !== this.last) {
       let event = {
         oldValue: this.last,
