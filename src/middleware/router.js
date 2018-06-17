@@ -51,7 +51,8 @@ export default function router (options) {
             current.hide()
             current = res
           }
-          document.getElementById('app').innerHTML = res
+          let $app = document.getElementById('app')
+          $app && ($app.innerHTML = res)
           next()
         } else {
           process(res.default)

@@ -47,7 +47,7 @@ export default function rest (options) {
       req.pathname
     )
     if (req.hash) {
-      let hash = new URL(
+      let hash = new window.URL(
         req.hash.substr(1),
         req.origin
       )

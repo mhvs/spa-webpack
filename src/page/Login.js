@@ -28,7 +28,8 @@ export default class Login extends Module {
 
   // 注册监听器, 点击登录跳转到用户页, 可能有监听事件多次注册的问题
   handleClick (context) {
-    document.getElementById('h-login-button').addEventListener('click', function () {
+    let $button = document.getElementById('h-login-button')
+    $button && $button.addEventListener('click', function () {
       const user = {
         uid: document.getElementById('h-username').value,
         username: document.getElementById('h-username').value
